@@ -6,7 +6,8 @@
      concat = require('gulp-concat'), //合并js文件
      notify = require('gulp-notify'), //更改提醒
      less = require('gulp-less'),
-     cssmin = require('gulp-minify-css'), 
+     cssmin = require('gulp-minify-css'),
+     watch = require('gulp-watch'), 
      livereload = require('gulp-livereload'); //自动刷新页面
 
  //js代码校验、合并和压缩（类似jquery的链式操作，牛）
