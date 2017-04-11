@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="3000;url=http://www.sohu.com/" />
+    <title>框架、表单</title>
+    <link rel="stylesheet" type="text/css" href="../../dist/airplane/css/airplane.css" />
+</head>
+
+<body>
+	<div class="content">
+	    <!--文本滚动部分-->
+		<h2>cool--cool</h2>
+	    <!--网页打开时加载另外一个内容-->
+
+	    <!--历史记录的前进和后退-->
+	    <input type="button" class="action" value="前进和后退" onclick="window.history.back(-1);" />
+	    <br><br>
+	    <!--jquery提交表单数据-->
+	    <form name="firstName" action="#" method="post">
+	        <input type="text" name="usr" class="usr" value="" placeholder="用户名" />
+	        <input type="password" name="pwd" class="usr" placeholder="密码" />
+	        <input type="submit" value="提交" class="btn" />
+	    </form>
+
+		<!--iframe框架-->
+		<button type="button" class="btn-iframe">修改iframe框架的目标URL</button>
+		<iframe src="#" frameborder="0" name="lyl" id="lyl" scrolling="yes" width="420" height="115" allowtransparency="true" class="none"></iframe>
+		<br>
+
+		<!--状态栏更改文本-->
+
+		<!--新开窗口-->
+		<button type="button" class="newWindow">打开新的窗口</button>
+		
+		<!--限制表单的输入-->
+		<form>
+			<input type="text" name="input-number" value="" onafterpaste="this.value=this.value.replace(/\D/g,'')" onKeyUp="this.value=this.value.replace(/\D/g,'')" />
+			<input type="text" name="keyCode" value="" />
+		</form>
+	</div>
+
+    <!--正文脚本-->
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../dist/airplane/js/airplane.js"></script>
+</body>
+
+</html>

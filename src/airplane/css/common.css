@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+a {
+  text-decoration: none;
+}
+.none {
+  display: none;
+}
+#cli_dialog_div {
+  display: none;
+}
+.clearfix:after {
+  clear: both;
+  display: block;
+  content: "";
+  line-height: 0;
+  height: 0;
+  visibility: hidden;
+}
+/**
+ * 最小高度
+ */
+.height {
+  background-color: red;
+  min-height: 100px;
+  height: auto !important;
+  height: 100px;
+}
+.element {
+  background-color: orange;
+  /* all IE/FF/CH/OP*/
+  *background-color: blue;
+  /* IE6+7, doesn't work in IE8/9 as IE7 */
+  _background-color: red;
+  /* IE6 */
+  background-color: green\0;
+  /* IE8+9+10  */
+  background-color: green\9;
+  /* IE6+7+8+9+10  */
+  background-color: pink\9\0;
+  /* IE9+10 */
+}
+:root .element {
+  background-color: pink\0;
+  /* IE9+10 */
+}

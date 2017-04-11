@@ -1,0 +1,26 @@
+.hack {
+  width: 98%;
+  margin: 0 auto;
+  font-family: "Tahoma", "micorsoft yahei";
+  /**	
+	 * [wrap 文本换行规则]
+	 * @type {[type]}
+	 */
+  word-wrap: break-word;
+  /*break-word,normal*/
+  word-break: break-all;
+}
+.hack h1 {
+  color: #333;
+  color: red\0;
+  *color: orange;
+}
+.hack [name="form1"] label {
+  vertical-align: middle;
+}
+.hack [name="form1"] input {
+  vertical-align: middle;
+}
+.hack [name="form1"] select {
+  background-color: #eee;
+}
