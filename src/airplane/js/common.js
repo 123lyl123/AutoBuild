@@ -149,13 +149,43 @@ var Init = {
 		return null;
 	},
 	/**
-	 * [getTime 获取时间格式2016-10-10 00:00:00]
+	 * [getTime 获取时间格式2016-10-10 00:00:00   2016/10/10 00:00:00]
 	 * @param  {[type]} date [description]
 	 * @return {[type]}      [description]
 	 */
-	getTime: function(date){
-		return  (new Date(Date.parse(time1.replace(/-/g,"/"))));
+	getTime: function(date) {
+		return Date.parse(date.replace(/-/g, "/"));
+	},
+	/**
+	 * [EnCode 将str转换为编码用x分割如:20320x65x66x67x]
+	 * @param {[type]} str [string]
+	 */
+	EnCode: function(str) {
+		var s;
+		var n;
+		s = "";
+		for (n = 0; n < str.length; n++)
+			s = s + str.charCodeAt(n) + "x";
+		return s;
+	},
+	/**
+	 * [UnCode 将EnCode转换出的编码串再转为字符串]
+	 * @param {[type]} str [string]
+	 */
+	UnCode: function(str) {
+		var i;
+		var scode;
+		var rs;
+		if (str == "") return "";
+		i = str.indexOf("x", 0);
+		rs = ""
+		while (i > 0) {
+			scode = str.substring(0, i)
+			rs = rs + String.fromCharCode(scode);
+			str = str.substring(i + 1);
+			i = str.indexOf("x", 0);
+		}
+		return rs;
 	}
-
 
 };
