@@ -186,6 +186,20 @@ var Init = {
 			i = str.indexOf("x", 0);
 		}
 		return rs;
-	}
+	},
+	/**
+	 * [bol_chinese 判断一个字符串是否为纯中文]
+	 * @param  {[type]} str [字符串]
+	 * @return {[type]}     [bool类型的变量]
+	 */
+	bol_chinese: function(str){
+		var pattern = /[^\u4E00-\u9FA5]/;
+		if(pattern.test(str)) 
+			return false; //非中文
+		else 
+			return true; //纯中文
+	},
+
+	
 
 };
