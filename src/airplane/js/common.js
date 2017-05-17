@@ -192,14 +192,30 @@ var Init = {
 	 * @param  {[type]} str [字符串]
 	 * @return {[type]}     [bool类型的变量]
 	 */
-	bol_chinese: function(str){
+	bol_chinese: function(str) {
 		var pattern = /[^\u4E00-\u9FA5]/;
-		if(pattern.test(str)) 
+		if (pattern.test(str))
 			return false; //非中文
-		else 
+		else
 			return true; //纯中文
 	},
-
-	
+	/**
+	 * [forEach 数组遍历]
+	 * @return {[type]} [description]
+	 */
+	forEach: function() {
+		if (!Array.prototype.forEach) {
+			Array.prototype.forEach = function(fun /*, thisp*/ ) {
+				var len = this.length;
+				if (typeof fun != "function")
+					throw new TypeError();
+				var thisp = arguments[1];
+				for (var i = 0; i < len; i++) {
+					if (i in this)
+						fun.call(thisp, this[i], i, this);
+				}
+			};
+		}
+	}
 
 };

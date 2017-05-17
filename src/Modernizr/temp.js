@@ -12,7 +12,7 @@ var gulp = require('gulp'),
 
 //js代码校验、合并和压缩（类似jquery的链式操作，牛）
 gulp.task('scripts', function() {
-    return gulp.src(['src/Modernizr/js/*.js', '!.src/Modernizr/js/three.js']) //源文件
+    return gulp.src('src/Modernizr/js/*.js') //源文件
         .pipe(jshint.reporter('default'))
         .pipe(concat('Modernizr.js')) //2、合并js文件
         .pipe(gulp.dest('dist/Modernizr/js/')) //合并后文件存放位置
