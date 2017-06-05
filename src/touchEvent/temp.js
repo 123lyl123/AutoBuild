@@ -12,15 +12,15 @@ var gulp = require('gulp'),
 
 //js代码校验、合并和压缩（类似jquery的链式操作，牛）
 gulp.task('scripts', function() {
-    return gulp.src(['src/Modernizr/js/*.js', '!.src/Modernizr/js/three.js']) //源文件
+    return gulp.src('src/touchEvent/js/*.js') //源文件
         .pipe(jshint.reporter('default'))
-        .pipe(concat('Modernizr.js')) //2、合并js文件
-        .pipe(gulp.dest('dist/Modernizr/js/')) //合并后文件存放位置
+        .pipe(concat('touchEvent.js')) //2、合并js文件
+        .pipe(gulp.dest('dist/touchEvent/js/')) //合并后文件存放位置
         .pipe(rename({
             suffix: '.min'
         }))
         .pipe(uglify()) //3、执行压缩任务
-        .pipe(gulp.dest('dist/Modernizr/js/')) //压缩后文件存放位置
+        .pipe(gulp.dest('dist/touchEvent/js/')) //压缩后文件存放位置
         .pipe(notify({ //4、操作结束后提示
             message: 'Scripts task complete'
         }));
@@ -28,20 +28,20 @@ gulp.task('scripts', function() {
 
 //css样式预编译、合并、压缩
 gulp.task('css', function() {
-    return gulp.src('src/Modernizr/less/*.less')
+    return gulp.src('src/touchEvent/less/*.less')
         .pipe(less())
-        .pipe(gulp.dest('src/Modernizr/css/'))
+        .pipe(gulp.dest('src/touchEvent/css/'))
         .pipe(order([
-            "src/Modernizr/css/common.css",
-            "src/Modernizr/**/*.css"
+            "src/touchEvent/css/common.css",
+            "src/touchEvent/**/*.css"
         ]))
-        .pipe(concat('Modernizr.css'))
-        .pipe(gulp.dest('dist/Modernizr/css/'))
+        .pipe(concat('touchEvent.css'))
+        .pipe(gulp.dest('dist/touchEvent/css/'))
         .pipe(rename({
             suffix: '.min'
         }))
         .pipe(cssmin()) //压缩css
-        .pipe(gulp.dest('dist/Modernizr/css/'))
+        .pipe(gulp.dest('dist/touchEvent/css/'))
         .pipe(notify({ //4、操作结束后提示
             message: 'less task complete'
         }));
@@ -55,8 +55,8 @@ gulp.task('default', ['watch'], function() {
 // 监听（前端自动化的情怀）~
 gulp.task('watch', function() {
     // 监听 .js文件改动，一旦改动就会自动压缩合并
-    gulp.watch('src/Modernizr/js/*', ['scripts']);
-    gulp.watch('src/Modernizr/less/*', ['css']);
+    gulp.watch('src/touchEvent/js/*', ['scripts']);
+    gulp.watch('src/touchEvent/less/*', ['css']);
     // Create LiveReload server（用来自动刷新浏览器）
     livereload.listen();
 });
