@@ -15,9 +15,12 @@ body {
 body {
   font-family: "Hiragino Sans GB", "microsoft yahei", "WenQuanYi Micro Hei", sans-serif !important;
 }
-a {
-  border: none;
+a,
+input {
+  border: 0;
   outline: none;
+}
+a {
   text-decoration: none;
 }
 a:focus,
@@ -27,7 +30,7 @@ a:hover {
   text-decoration: none;
 }
 img {
-  border: none;
+  border: 0;
   display: block;
   width: 100%;
 }

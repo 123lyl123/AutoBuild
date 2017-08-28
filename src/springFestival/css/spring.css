@@ -243,7 +243,7 @@ a {
   width: 0.328125rem;
   height: 0.40625rem;
 }
-.back_top {
+.side_top {
   position: fixed;
   bottom: 1.0rem;
   right: .133333rem;
@@ -260,7 +260,26 @@ a {
   -moz-transition: opacity .5s linear;
   transition: opacity .5s linear;
 }
-.back_top i {
+.side_top i {
+  display: inline-block;
+  font-style: normal;
+  background-color: #fff;
+  width: 100%;
+  line-height: 1;
+  text-align: center;
+}
+.side_left {
+  position: fixed;
+  bottom: 1.0rem;
+  left: .133333rem;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 1.0rem;
+}
+.side_left i {
   display: inline-block;
   font-style: normal;
   background-color: #fff;
