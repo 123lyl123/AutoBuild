@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>AngularJS-表达式</title>
+	<meta name="keywords" content="" />
+	<meta name='description' content='' />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="wap-font-scale" content="no">
+    <!--UC强制全屏-->
+    <meta name="full-screen" content="no" />
+    <link rel="stylesheet" type="text/css" href="../../dist/AngularJS/css/AngularJS.css" />
+</head>
+<body>
+	<!--主体内容-->
+	<div ng-app="" ng-init="quantity=1;cost=5;person={firstName:'John',lastName:'Doe'}">
+		<p>名字：<input type="text" ng-model="name"></p>
+		<h1>Hello {{name}}</h1>
+
+		<p>总价格：{{quantity * cost}}</p>
+		<p>姓名为：{{person.firstName + "" + person.lastName}}</p>
+	</div>
+
+	<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+	<script type="text/javascript" src="../../zepto.min.js"></script>
+	<script type="text/javascript" src="//js.40017.cn/touch/hb/c/webp/webpjs.min.js?v=2019101308"></script>
+	<script type="text/javascript" src="../../iscroll.js"></script>
+
+	<script type="text/javascript" src="../../dist/AngularJS/js/AngularJS.js"></script>
+</body>
+</html>
