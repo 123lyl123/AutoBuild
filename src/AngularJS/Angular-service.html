@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>AngularJS-服务</title>
+	<meta name="keywords" content="" />
+	<meta name='description' content='' />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="wap-font-scale" content="no">
+    <!--UC强制全屏-->
+    <meta name="full-screen" content="no" />
+    <link rel="stylesheet" type="text/css" href="../../dist/AngularJS/css/AngularJS.css" />
+</head>
+<body>
+	<!--主体内容-->
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<p>热烈欢迎</p>
+		<h1>{{myWelcome}}</h1>
+		<h2 style="color: red">当前页面的路径{{myUrl}}</h2>
+		<h2 style="color: red">当前时间{{theTime}}</h2>
+	</div>
+	<p> $http 服务向服务器请求信息，返回的值放入变量 "myWelcome" 中。</p>
+	<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+	<script>
+		var app = angular.module("myApp", []);
+		app.controller('myCtrl', function($scope, $http, $location, $interval){
+			$http.get("demo.html").then(function(response){
+				$scope.myWelcome = response.data;
+			})
+			$scope.myUrl = $location.absUrl();
+			$scope.theTime = new Date().toLocaleString();
+			$interval(function(){
+				$scope.theTime = new Date().toLocaleString();
+			},1000)
+		})
+		
+	</script>
+	<script type="text/javascript" src="../../zepto.min.js"></script>
+	<script type="text/javascript" src="//js.40017.cn/touch/hb/c/webp/webpjs.min.js?v=2019101308"></script>
+	<script type="text/javascript" src="../../iscroll.js"></script>
+</body>
+</html>

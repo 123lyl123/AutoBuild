@@ -1,4 +1,4 @@
-;
+
 (function(win) {
     //从地址栏获取参数
     function getQuery(name, def, symbol) {
@@ -17,4 +17,4 @@
     $(function() {
         bind.Init();
     })
-})(window)
+})(window);
