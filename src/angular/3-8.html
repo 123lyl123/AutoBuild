@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>作用域的层级</title>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		ul{
+			list-style-type: none;
+			width: 408px;
+			margin: 8px 0;
+			padding: 0;
+		}
+		ul .ng-scope{
+			background-color: #eee;
+		}
+		ul li{
+			float: left;
+			padding: 5px 0;
+		}
+		ul .bold{
+			font-weight: bold;
+		}
+		ul .school{
+			float: right;
+			margin-right: 80px;
+		}
+		ul li span{
+			width: 52px;
+			float: left;
+			text-align: center;
+			padding: 0 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<div ng-controller="c3_8_school">
+		<ul ng-controller="c3_8_class_1">
+			<li ng-class="{{school}}">{{s_name}}{{c_name}}</li>
+			<li ng-class="{{bold}}">
+				<span>序号</span>
+				<span>姓名</span>
+				<span>性别</span>
+				<span>英语</span>
+				<span>数学</span>
+			</li>
+			<li ng-repeat="stu in data">
+				<span>{{$index + 1}}</span>
+				<span>{{stu.name}}</span>
+				<span>{{stu.sex}}</span>
+				<span>{{stu.english}}</span>
+				<span>{{stu.maths}}</span>
+			</li>
+		</ul>
+		<ul ng-controller="c3_8_class_2">
+			<li ng-class="{{school}}">{{s_name}}{{c_name}}</li>
+			<li ng-class="{{bold}}">
+				<span>序号</span>
+				<span>姓名</span>
+				<span>性别</span>
+				<span>英语</span>
+				<span>数学</span>
+			</li>
+			<li ng-repeat="stu in data">
+				<span>{{$index + 1}}</span>
+				<span>{{stu.name}}</span>
+				<span>{{stu.sex}}</span>
+				<span>{{stu.english}}</span>
+				<span>{{stu.maths}}</span>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.controller('c3_8_school', function($scope){
+			$scope.s_name = '北城区实验小学';
+			$scope.bold = "bold";
+			$scope.school = "school";
+		});
+		app.controller('c3_8_class_1', function($scope){
+			$scope.c_name = "三年级(1)班";
+			$scope.data = [{
+				name: "张明明", sex: "女", english: 85, maths: 95
+			},{
+				name: "李清思", sex: "女", english: 97, maths: 87
+			}];
+		});
+		app.controller('c3_8_class_2', function($scope){
+			$scope.c_name = "三年级(2)班";
+			$scope.data = [{
+				name: "刘晓华", sex: "男", english: 97, maths: 86
+			},{
+				name: "陈忠忠", sex: "男", english: 87, maths: 88
+			}];
+		});
+	</script>
+</body>
+</html>

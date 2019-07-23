@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>添加元素样式</title>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		ul{
+			list-style-type: none;
+			width: 408px;
+			margin: 0;
+			padding: 0;
+		}
+		ul li{
+			float: left;
+			padding: 5px 0;
+		}
+		ul .odd{
+			color: #0026ff;
+		}
+		ul .even{
+			color: #ff0000;
+		}
+		ul .bold{
+			font-weight: bold;
+		}
+		ul li span{
+			width: 53px;
+			float: left;
+			padding: 0 10px;
+		}
+		ul .focus{
+			background-color: #cccccc;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c2_11">
+		<ul>
+			<li ng-class="{{bold}}">
+				<span>序号</span>
+				<span>姓名</span>
+				<span>性别</span>
+				<span>是否首条</span>
+				<span>是否尾条</span>
+			</li>
+			<li ng-class-odd="odd" ng-class-even="even" ng-repeat=" stu in dataset" ng-click="li_click($index)" ng-class="{focus: $index == focus}">
+				<span>{{$index + 1}}</span>
+				<span>{{stu.name}}</span>
+				<span>{{stu.sex}}</span>
+				<span>{{$first?'是':'否'}}</span>
+				<span>{{$last?'是':'否'}}</span>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.controller('c2_11', function($scope){
+			$scope.bold = "bold";
+			$scope.li_click = function(i){
+				$scope.focus = i;
+			}
+			$scope.dataset = [
+			{ name: '张明明', sex: '女'},
+			{ name: '李庆思', sex: '女'},
+			{ name: '刘晓华', sex: '男'},
+			{ name: '陈忠忠', sex: '男'},
+			];
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>has和get方法</title>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c4_6">
+		<!-- 视图组件 -->
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script type="text/javascript">
+		var app  =angular.module('app', [])
+			.factory('custom', function(){
+				return {
+					print: function(msg){
+						console.log(msg);
+					}
+				};
+			});
+		var injector = angular.injector(['app', 'ng']);
+		var fun = function(custom){
+			custom.print('函数执行成功!');
+		}
+		injector.invoke(fun);
+		var has = injector.has('custom');
+		console.log(has);
+		if(has){
+			var custom = injector.get('custom');
+			custom.print("控制台输出任意的内容");
+		}
+		app.controller('c4_6', ['$scope', 'custom', function($scope, custom){
+			
+		}]);
+	</script>
+</body>
+</html>

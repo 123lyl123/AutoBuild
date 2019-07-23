@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html id="app5">
+
+<head>
+    <meta charset="utf-8">
+    <title>条件渲染</title>
+    <link rel="stylesheet" type="text/css" href="../../dist/Vue/css/Vue.css" />
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <template v-if="Math.random() > 0.5" >
+        <h1>Title</h1>
+        <p>第一段落</p>
+        <p>第二段落</p>
+    </template>
+    <script src="https://cdn.staticfile.org/vue/1.0.28/vue.js" type="text/javascript"></script>
+    <script type="text/javascript">
+	    var app =new Vue({
+            el: '#app5',
+            data: {
+                
+            }
+        })
+    </script>
+</body>
+
+</html>

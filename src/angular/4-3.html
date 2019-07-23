@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>推断式注入</title>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+
+	</style>
+</head>
+<body>
+	<div ng-controller="c4_3">
+		<input type="button" id="btnAlert" value="弹出对话框" ng-click="onClick('我是一个对话框')" />
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.factory('$show', function($window){
+			return {
+				show:function(text){
+					$window.alert(text);
+				}
+			};
+		});
+		app.controller('c4_3', function($scope, $show){
+			$scope.onClick = function(msg){
+				$show.show(msg);
+			}
+		});
+	</script>
+</body>
+</html>

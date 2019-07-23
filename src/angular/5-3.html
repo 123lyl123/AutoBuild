@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>控制器的属性和方法</title>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+			margin: 0;
+			padding: 0;
+		}
+		.show{
+			background-color: #ccc;
+			padding: 8px;
+			width: 260px;
+			margin: 10px 0;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c5_3">
+		<button ng-click="changeA()">李四</button>
+		<button ng-click="changeB()">赵四</button>
+		<p class="show">我的名字叫：{{name}}</p>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.controller('c5_3', function($scope){
+			$scope.name = '张三';
+			$scope.changeA = function(){
+				$scope.name = '李四';
+			}
+			$scope.changeB = function(){
+				$scope.name = '王二';
+			}
+		});
+	</script>
+</body>
+</html>

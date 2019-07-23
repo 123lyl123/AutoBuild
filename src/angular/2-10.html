@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>使用指令复制元素</title>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		ul{
+			list-style: none;
+			width: 400px;
+			margin: 0;
+			padding: 0;
+		}
+		ul li{
+			float: left;
+			padding: 5px 0;
+		}
+		ul li span{
+			width: 50px;
+			float: left;
+			padding: 0 10px;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c2_10">
+		<ul>
+			<li>
+				<span>序号</span>
+				<span>姓名</span>
+				<span>性别</span>
+				<span>是否首条</span>
+				<span>是否尾条</span>
+			</li>
+			<li ng-repeat=" stu in dataset">
+				<span>{{$index + 1}}</span>
+				<span>{{stu.name}}</span>
+				<span>{{stu.sex}}</span>
+				<span>{{$first?'是':'否'}}</span>
+				<span>{{$last?'是':'否'}}</span>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.controller('c2_10', function($scope){
+			$scope.dataset = [
+			{ name: '张明明', sex: '女'},
+			{ name: '李庆思', sex: '女'},
+			{ name: '刘晓华', sex: '男'},
+			{ name: '陈忠忠', sex: '男'},
+			];
+		})
+	</script>
+</body>
+</html>

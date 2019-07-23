@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>控制元素隐藏或者显示</title>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			margin: 8px 0;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c2_12">
+		<div ng-show={{isShow}}>覃国荣</div>
+		<div ng-hide={{isHide}}>yta-guoreong@163.com</div>
+		<ul ng-switch on={{switch}}>
+			<li ng-switch-when="1"></li>
+			<li ng-switch-when="2">yta-guoreong@163.com</li>
+			<li ng-switch-default>更多。。。</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.controller('c2_12', function($scope){
+			$scope.isShow = true;
+			$scope.isHide = false;
+			$scope.switch = 2;
+		})
+	</script>
+</body>
+</html>

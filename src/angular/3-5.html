@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>字符查找</title>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		ul{
+			list-style-type: none;
+			width: 408px;
+			margin: 0;
+			padding: 0;
+		}
+		ul li{
+			float: left;
+			padding: 5px 0;
+		}
+		ul .odd{
+			color: #0026ff;
+		}
+		ul .even{
+			color: #ff0000;
+		}
+		ul .bold{
+			font-weight: bold;
+		}
+		ul li span{
+			width: 52px;
+			float: left;
+			padding: 0 10px;
+		}
+		ul .focus{
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c3-1">
+		<div>
+			<input type="text" id="txtKey" ng-model="key" placeholder="请输入姓名关键字" />
+		</div>
+		<ul>
+			<li ng-class="{{bold}}">
+				<span>序号</span>
+				<span>姓名</span>
+				<span>性别</span>
+				<span>年龄</span>
+				<span>分数</span>
+			</li>
+			<li ng-repeat="stu in data | filter: {name:key}" ng-class-odd="'odd'" ng-class-even="'even'">
+				<span>{{$index + 1}}</span>
+				<span>{{stu.name}}</span>
+				<span>{{stu.sex}}</span>
+				<span>{{stu.age}}</span>
+				<span>{{stu.score}}</span>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.controller('c3-1', function($scope){
+			$scope.bold = "bold";
+			$scope.key = '';
+			$scope.data = [{
+				name:"张明明", sex: "女", age:24, score: 95
+			},{
+				name:"李庆四", sex: "女", age:27, score: 87
+			},{
+				name:"刘小华", sex: "男", age:28, score: 86
+			},{
+				name:"陈忠忠", sex: "男", age:23, score: 97
+			}];
+		})
+	</script>
+</body>
+</html>

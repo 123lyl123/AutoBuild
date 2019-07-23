@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>Model组件的基本概念</title>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+			margin: 0;
+			padding: 0;
+		}
+		.show{
+			background-color: #ccc;
+			padding: 8px;
+			width: 260px;
+			margin: 10px 0;
+			word-break: break-all;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c5_1">
+		<div class="show">{{name}}</div>
+		<input type="text" ng-model="score" value="95" />
+		<div class="show">{{score}}</div>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.controller('c5_1', ['$scope', function($scope){
+			$scope.name = "张三";
+		}])
+	</script>
+</body>
+</html>

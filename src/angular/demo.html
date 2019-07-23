@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>计算支撑位，压力位和7个点位的示例</title>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+			margin: 0;
+			padding: 0;
+		}
+		p{
+			line-height: 34px;
+			font-size: 24px;
+		}
+	</style>
+</head>
+<body ng-controller="demo">
+	<p>
+		高点<input type="text" ng-model="highPoint" id="highPoint" ng-change="calcuate()" />
+	</p>
+	<p>
+		低点<input type="text" ng-model="lowPoint" id="lowPoint" ng-change="calcuate()" />
+	</p>
+	<p>
+		收盘<input type="text" ng-model="endPoint" id="endPoint" ng-change="calcuate()" />
+	</p>
+	<p>
+		R3(阻力3):<span>{{R3}}</span>
+	</p>
+	<p>
+		R2(阻力2):<span>{{R2}}</span>
+	</p>
+	<p>
+		R1(阻力1):<span>{{R1}}</span>
+	</p>
+	<p>
+		S1(支撑1):<span>{{S1}}</span>
+	</p>
+	<p>
+		S2(支撑2):<span>{{S2}}</span>
+	</p>
+	<p>
+		S3(支撑3):<span>{{S3}}</span>
+	</p>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script type="text/javascript" src="../../jquery-1.11.0.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.controller('demo', function($scope){
+			$scope.highPoint = 444.00;
+			$scope.lowPoint = 222.00;
+			$scope.endPoint = 333.00;
+			// $scope.calcuate = function(){
+			// 	$scope.zhidian = (parseFloat($scope.highPoint) + parseFloat($scope.lowPoint) + parseFloat($scope.endPoint)) / 3;
+			// 	$scope.R1 = 2 * $scope.zhidian - parseFloat($scope.lowPoint);
+			// 	$scope.S1 = 2 * $scope.zhidian - parseFloat($scope.highPoint);
+			// 	$scope.R2 = $scope.zhidian + $scope.R1 - $scope.S1; 
+			// 	$scope.R3 = parseFloat($scope.highPoint) + 2 *($scope.zhidian - parseFloat($scope.lowPoint));
+			// 	$scope.S2 = $scope.zhidian - ($scope.R1 - $scope.S1);
+			// 	$scope.S3 = parseFloat($scope.lowPoint) - 2 * (parseFloat($scope.highPoint)- $scope.zhidian);
+			// }
+			$scope.calcuate = function(){
+				$scope.zhidian = (parseFloat($scope.highPoint) + parseFloat($scope.lowPoint) + parseFloat($scope.endPoint)) / 3;
+				$scope.R1 = 2 * $scope.zhidian - parseFloat($scope.lowPoint);
+				$scope.S1 = 2 * $scope.zhidian - parseFloat($scope.highPoint);
+				$scope.R2 = $scope.zhidian + $scope.R1 - $scope.S1; 
+				$scope.R3 = parseFloat($scope.highPoint) + 2 *($scope.zhidian - parseFloat($scope.lowPoint));
+				$scope.S2 = $scope.zhidian - ($scope.R1 - $scope.S1);
+				$scope.S3 = parseFloat($scope.lowPoint) - 2 * (parseFloat($scope.highPoint)- $scope.zhidian);
+			}
+		});
+	</script>
+</body>
+</html>

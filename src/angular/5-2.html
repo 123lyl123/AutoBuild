@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>使用ng-Repeater方式遍历Model对象</title>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+			margin: 0;
+			padding: 0;
+		}
+		.show{
+			background-color: #ccc;
+			width: 280px;
+			padding: 8px;
+			margin: 10px 0;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c5_2">
+		<p ng-repeat=" dtu in data" class="show">
+			<input type="radio" checked="false" name="student" />
+			<span>{{$index + 1}}</span>
+			<span>{{dtu.name}}</span>
+			<span>{{dtu.sex}}</span>
+		</p>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.controller('c5_2', ['$scope', function($scope){
+			$scope.data = [{
+				name: "有点意思", sex: "女"
+			},{
+				name: "有点意思", sex: "女"
+			},{
+				name: "有点意思", sex: "女"
+			},{
+				name: "有点意思", sex: "女"
+			}];
+		}]);
+	</script>
+</body>
+</html>

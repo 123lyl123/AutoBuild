@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8" />
+	<title>在切换视图模板传参数</title>
+	<style type="text/css">
+		body{
+			font-size: 13px;
+			margin: 0;
+			padding: 0;
+		}
+		a{
+			text-decoration: none;
+		}
+		.show{
+			background-color: #ccc;
+			padding: 8px;
+			width: 260px;
+			margin: 10px 0;
+		}
+	</style>
+</head>
+<body>
+	<div ng-view></div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="//cdn.bootcss.com/angular.js/1.5.8/angular-route.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app',['ngRoute']);
+		app.controller('c5_7_1', function($scope){
+			$scope.students  = students;
+		});
+		app.controller('c5_7_2', function($scope, $routeParams){
+			for(var i = 0;i < students.length; i++){
+				if(students[i].stuId == $routeParams.id){
+					$scope.student = students[i];
+					break;
+				}
+			}
+		});
+		app.config(['$routeProvider',function($routeProvider) {
+			$routeProvider
+				.when('/',{
+					controller: 'c5_7_1',
+					templateUrl: '5-7-1.html'
+				})
+				.when('/view/:id',{
+					controller: 'c5_7_2',
+					templateUrl: '5-7-2.html',
+					publicAccess: true
+				})
+				.otherwise({
+					redirectTo: '/'
+				});
+		}]);
+		var students = [{
+			stuId: 1000, name: "zhdsdsd", sex: "女", score: 60
+		},{
+			stuId: 1001, name: "zhdsdsd", sex: "女", score: 60
+		},{
+			stuId: 1002, name: "zhdsdsd", sex: "女", score: 60
+		},{
+			stuId: 1003, name: "zhdsdsd", sex: "女", score: 60
+		}];
+	</script>
+</body>
+</html>
