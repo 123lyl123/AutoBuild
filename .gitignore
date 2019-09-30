@@ -18,4 +18,3 @@ Makefile.in
 /stamp-h1
 
 node_modules/
-dist/
