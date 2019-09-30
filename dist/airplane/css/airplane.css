@@ -1,0 +1,149 @@
+.appxb {
+  color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  z-index: 250;
+}
+.appxb-header {
+  position: fixed;
+  cursor: pointer;
+  left: 0px;
+  bottom: 20px;
+}
+.appxb-con {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.appxb-con > div {
+  margin: 0 auto;
+  z-index: 10;
+  position: relative;
+  width: 990px;
+}
+.appxb-con .app-wrap {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: -2;
+  bottom: 0;
+  background: rgba(0, 15, 23, 0.85);
+  height: 110px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+a {
+  text-decoration: none;
+}
+.none {
+  display: none;
+}
+#cli_dialog_div {
+  display: none;
+}
+.clearfix:after {
+  clear: both;
+  display: block;
+  content: "";
+  line-height: 0;
+  height: 0;
+  visibility: hidden;
+}
+body {
+  font-family: 'Microsoft YaHei', Arial, sans-serif;
+}
+
+.content {
+  width: 1100px;
+  margin: 0 auto;
+}
+.content h2 {
+  margin-bottom: 12px;
+  color: red;
+  font-size: 68px;
+  font-family: "micorsoft yahei";
+}
+.content form .usr {
+  width: 80px;
+  height: 32px;
+  padding: 4px 8px;
+  line-height: 32px;
+  border: 2px solid blue;
+  background-color: #eee;
+  vertical-align: middle;
+}
+.content form .btn {
+  width: 92px;
+  height: 42px;
+  vertical-align: middle;
+}
+.content iframe[name="lyl"] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+}
+
+.hack {
+  width: 98%;
+  margin: 0 auto;
+  font-family: "Tahoma", "micorsoft yahei";
+  /**	
+	 * [wrap 文本换行规则]
+	 * @type {[type]}
+	 */
+  word-wrap: break-word;
+  /*break-word,normal*/
+  word-break: break-all;
+}
+.hack h1 {
+  color: #333;
+  color: red\0;
+  *color: orange;
+}
+.hack [name="form1"] label {
+  vertical-align: middle;
+}
+.hack [name="form1"] input {
+  vertical-align: middle;
+}
+.hack [name="form1"] select {
+  background-color: #eee;
+}
+/**
+ * 最小高度
+ */
+.height {
+  background-color: red;
+  min-height: 100px;
+  height: auto !important;
+  height: 100px;
+}
+.element {
+  background-color: orange;
+  /* all IE/FF/CH/OP*/
+  *background-color: blue;
+  /* IE6+7, doesn't work in IE8/9 as IE7 */
+  _background-color: red;
+  /* IE6 */
+  background-color: green\0;
+  /* IE8+9+10  */
+  background-color: green\9;
+  /* IE6+7+8+9+10  */
+  background-color: pink\9\0;
+  /* IE9+10 */
+}
+:root .element {
+  background-color: pink\0;
+  /* IE9+10 */
+}
+
+

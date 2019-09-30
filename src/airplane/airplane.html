@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="3000;url=http://www.sohu.com/" />
     <title>框架、表单</title>
     <link rel="stylesheet" type="text/css" href="../../dist/airplane/css/airplane.css" />
 </head>
@@ -41,8 +40,28 @@
 		</form>
 	</div>
 
-    <!--正文脚本-->
-    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+
+    <!-- 弹层开始 -->
+	<div class="appxb" style="z-index: 250;">
+        <div class="appxb-header">
+            <img style="margin-left:0px;" att-smallimg="//file.40017.cn/appresource/image/pc/playscreen_summer/shou_xiao.png" att-bigimg="//file.40017.cn/appresource/image/pc/playscreen_summer/shou_da.png" src="//file.40017.cn/appresource/image/pc/playscreen_summer/shou_xiao.png" alt="">
+        </div>
+        <div class="appxb-con none" style="left: -100%;">
+            <div class="app-warp" style="height: 110px;" small-height="110" big-height="130"></div>
+            <div style="width: 1190px">
+                <a class="opred" target="_blank" style="cursor: default;">
+                    <!--<img class="opred_Btn" src="//pic5.40017.cn/01/001/9c/29/rBLkBlj94ciAABdtAAAOX5jQUlk427.png" style="position: absolute;right: 105px;bottom: 32px;">-->
+                    <img style="display: block;" src="//file.40017.cn/appresource/image/pc/playscreen_summer/zhan_xiao.png" att-smallimg="//file.40017.cn/appresource/image/pc/playscreen_summer/zhan_xiao.png" att-bigimg="//file.40017.cn/appresource/image/pc/playscreen_summer/zhan_da.png">
+                </a>
+                <!--<div class="qrcode" style="width: 198px;height: 110px;border: none;cursor: default;right: 0;bottom: 0;">-->
+                <!--<div></div> <i></i>-->
+                <!--</div>-->
+                <a class="warp-close" style="top: 50%;margin-top: -20px;right: -10px;background-image: url(//pic5.40017.cn/02/000/2f/45/rBLkCVswmyqAP3wYAAAGugK8mlY656.png);" href="javascript:void(0);" onclick="_tcTraObj._tcTrackEvent('PC', 'shouye', 'tanceng','close')"></a>
+            </div>
+        </div>
+    </div>
+	<!-- 弹层结束 -->
+    <script type="text/javascript" src="../../jquery-1.11.0.js"></script>
     <script type="text/javascript" src="../../dist/airplane/js/airplane.js"></script>
 </body>
 
